@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FinancialDisclaimer } from "@/components/FinancialDisclaimer";
 
 export const metadata: Metadata = {
-  title: "Investing Basics — Financial Safety & Wealth — SafeHers",
+  title: "Investing Basics — Financial Safety & Wealth — SafeHer Foundation",
   description: "Ghana Stock Exchange, treasury bills, mutual funds, and real estate basics. Investment education for African women.",
 };
 

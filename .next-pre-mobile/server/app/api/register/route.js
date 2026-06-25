@@ -1,0 +1,29 @@
+"use strict";(()=>{var e={};e.id=5569,e.ids=[5569],e.modules={11185:e=>{e.exports=require("mongoose")},20399:e=>{e.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},30517:e=>{e.exports=require("next/dist/compiled/next-server/app-route.runtime.prod.js")},6005:e=>{e.exports=require("node:crypto")},10283:(e,t,r)=>{r.r(t),r.d(t,{originalPathname:()=>w,patchFetch:()=>v,requestAsyncStorage:()=>y,routeModule:()=>h,serverHooks:()=>E,staticGenerationAsyncStorage:()=>x});var o={};r.r(o),r.d(o,{POST:()=>f});var n=r(49303),a=r(88716),s=r(60670),i=r(87070),l=r(82591),p=r(14184),c=r(88929);let m=process.env.RESEND_API_KEY?new l.R(process.env.RESEND_API_KEY):null,u=process.env.RESEND_FROM_EMAIL??"hello@safehers.africa",d=process.env.ADMIN_NOTIFICATION_EMAIL??u;async function g(e){var t;if(!m){console.log("[register] No RESEND_API_KEY — emails skipped. Registration:",e);return}try{m.emails.send({from:u,to:e.email,subject:"You're on the SafeHers waitlist ✦",html:(t=e.name,`
+<!DOCTYPE html><html><head><meta charset="utf-8"/></head><body style="margin:0;padding:0;background:#FAF6EF;font-family:Georgia,serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;margin:40px auto;background:#FAF6EF;">
+    <tr><td style="background:#0E0E10;padding:28px 40px;">
+      <span style="font-family:Georgia,serif;font-size:22px;color:#FAF6EF;letter-spacing:-0.02em;">SafeHers</span>
+      <span style="color:#E8B4B8;font-size:16px;margin-left:6px;">✦</span>
+    </td></tr>
+    <tr><td style="padding:48px 40px 32px;">
+      <p style="font-family:Georgia,serif;font-size:40px;line-height:1;color:#0E0E10;margin:0 0 24px;">You&rsquo;re on the list.</p>
+      <p style="font-size:16px;line-height:1.7;color:#0E0E10;margin:0 0 16px;">Hi ${t}, you are on the waitlist for the SafeHers Personal Safety Training founding cohort. We will be in touch as soon as launch dates are confirmed &mdash; you will be first to know.</p>
+      <p style="font-size:16px;line-height:1.7;color:#0E0E10;margin:0 0 32px;">In the meantime, visit <a href="https://safehers.africa" style="color:#5C1F2E;">safehers.africa</a> to learn more about the programme.</p>
+      <p style="font-size:14px;color:#0E0E10;margin:0;">With care,<br/><strong>Zarinah Traci</strong><br/><span style="opacity:0.6;">Co-Founder, SafeHers</span></p>
+    </td></tr>
+    <tr><td style="background:#0E0E10;padding:20px 40px;">
+      <p style="font-family:monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#FAF6EF;opacity:0.4;margin:0;">
+        SafeHers &mdash; Pan-African Safety Education
+      </p>
+    </td></tr>
+  </table>
+</body></html>`)})}catch(e){console.error("[register] Confirmation email failed:",e)}try{m.emails.send({from:u,to:d,subject:`New SafeHers registration — ${e.name}`,html:`<pre style="font-family:monospace;font-size:13px;">New Registration
+
+Name:   ${e.name}
+Email:  ${e.email}
+Country: ${e.country??"-"}
+Format: ${e.format??"-"}
+Phone:  ${e.phone??"-"}
+
+Learning goals:
+${e.learningGoals??"(none)"}</pre>`})}catch(e){console.error("[register] Admin notification failed:",e)}}async function f(e){try{let{name:t,email:r,country:o,format:n,phone:a,learningGoals:s,consentToContact:l,website:m}=await e.json();if(m)return i.NextResponse.json({ok:!0});if(!t||!r||!n)return i.NextResponse.json({error:"Name, email and format are required."},{status:400});if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(r))return i.NextResponse.json({error:"Please enter a valid email address."},{status:400});try{await (0,p.u)(),await c.Y.findOne({email:r.toLowerCase()})||await c.Y.create({name:t,email:r,country:o,format:n,phone:a,learningGoals:s,consentToContact:l})}catch(e){return console.error("[register] DB error — logging registration to console:",{name:t,email:r,country:o,format:n}),g({name:t,email:r,country:o,format:n,phone:a,learningGoals:s}),i.NextResponse.json({ok:!0,warning:"saved-locally"})}return g({name:t,email:r,country:o,format:n,phone:a,learningGoals:s}),i.NextResponse.json({ok:!0})}catch(e){return console.error("[register] Unhandled error:",e),i.NextResponse.json({error:"Something went wrong. Please try again."},{status:500})}}let h=new n.AppRouteRouteModule({definition:{kind:a.x.APP_ROUTE,page:"/api/register/route",pathname:"/api/register",filename:"route",bundlePath:"app/api/register/route"},resolvedPagePath:"/opt/safeher/safehers/src/app/api/register/route.ts",nextConfigOutput:"",userland:o}),{requestAsyncStorage:y,staticGenerationAsyncStorage:x,serverHooks:E}=h,w="/api/register/route";function v(){return(0,s.patchFetch)({serverHooks:E,staticGenerationAsyncStorage:x})}},14184:(e,t,r)=>{r.d(t,{u:()=>i});var o=r(11185),n=r.n(o);let a=process.env.MONGODB_URI;a||console.warn("[mongo] MONGODB_URI not set. API routes that need a database will fail. Copy .env.local.example to .env.local and set MONGODB_URI.");let s=global.mongoose??{conn:null,promise:null};async function i(){if(s.conn)return s.conn;if(!a)throw Error("MONGODB_URI not configured");return s.promise||(s.promise=n().connect(a,{bufferCommands:!1}).then(e=>e)),s.conn=await s.promise,s.conn}global.mongoose||(global.mongoose=s)},88929:(e,t,r)=>{r.d(t,{Y:()=>a});var o=r(11185);let n=new o.Schema({name:{type:String,required:!0,trim:!0},email:{type:String,required:!0,lowercase:!0,trim:!0,index:{unique:!0}},country:{type:String,trim:!0,default:"Ghana"},format:{type:String,enum:["in-person-accra","virtual","either"],default:"either"},learningGoals:{type:String,maxlength:1e3},phone:{type:String,trim:!0},consentToContact:{type:Boolean,default:!0},createdAt:{type:Date,default:Date.now}}),a=o.models.Registration||(0,o.model)("Registration",n)}};var t=require("../../../webpack-runtime.js");t.C(e);var r=e=>t(t.s=e),o=t.X(0,[8948,5972,2591],()=>r(10283));module.exports=o})();

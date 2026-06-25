@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PersonalSafetyClient from "./PersonalSafetyClient";
 
 export const metadata: Metadata = {
-  title: "Personal Safety Training — Foundation Module — SafeHers",
+  title: "Personal Safety Training — Foundation Module — SafeHer Foundation",
   description:
     "Workshops covering situational awareness, instinct, secure movement, and personal protection. Built on twenty years of expertise. Designed for women across Africa and the world.",
 };

@@ -4,11 +4,13 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter, usePathname } from "next/navigation";
 import { useEffect } from "react";
 import Link from "next/link";
-import { LayoutDashboard, Mail, Users, LogOut } from "lucide-react";
+import { LayoutDashboard, Mail, Users, LogOut, GraduationCap, ClipboardCheck } from "lucide-react";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/admin/contacts", label: "Contact Submissions", icon: Mail },
+  { href: "/admin/academy", label: "Academy", icon: GraduationCap },
+  { href: "/admin/academy/qa", label: "QA Checklist", icon: ClipboardCheck },
+  { href: "/admin/contacts", label: "Contacts", icon: Mail },
   { href: "/admin/subscribers", label: "Newsletter", icon: Users },
 ];
 
@@ -23,7 +25,20 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
     if (status === "unauthenticated" && !isLoginPage) {
       router.replace("/admin/login");
     }
-  }, [status, router, isLoginPage]);
+    if (status === "authenticated" && !isLoginPage) {
+      const role = (session?.user as { role?: string })?.role;
+      if (role !== "admin" && role !== "super_admin") {
+        // Redirect non-admin users to their correct dashboard
+        const dashMap: Record<string, string> = {
+          institution_admin: "/institution",
+          donor: "/donor",
+          educator: "/educator",
+          consultant: "/consultant",
+        };
+        router.replace(dashMap[role || ""] || "/portal");
+      }
+    }
+  }, [status, session, router, isLoginPage]);
 
   if (status === "loading") {
     return (
@@ -44,7 +59,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
       <aside className="w-64 shrink-0 bg-ink text-cream flex flex-col">
         <div className="p-8 border-b border-cream/10">
           <Link href="/" className="flex items-center gap-2 group">
-            <span className="display text-xl">SafeHers</span>
+            <span className="display text-xl">SafeHer Foundation</span>
             <span className="text-rose pulse-soft">✦</span>
           </Link>
           <p className="eyebrow text-xs text-cream/40 mt-2">Admin Panel</p>

@@ -16,9 +16,13 @@ export default function RootLayoutInner({
 }) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith("/admin");
+  const isPortal = pathname?.startsWith("/portal");
+  const isInstitution = pathname?.startsWith("/institution");
+  const isDonor = pathname?.startsWith("/donor");
+  const isEducator = pathname?.startsWith("/educator");
+  const isConsultant = pathname?.startsWith("/consultant");
 
-  if (isAdmin) {
-    // Admin pages render their own layout — no Nav/Footer
+  if (isAdmin || isPortal || isInstitution || isDonor || isEducator || isConsultant) {
     return <>{children}</>;
   }
 

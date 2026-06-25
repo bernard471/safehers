@@ -9,10 +9,10 @@ export default function Contact() {
     name: "",
     email: "",
     organization: "",
-    interest: "certification",
+    interest: "partnership",
     country: "",
     message: "",
-    website: "", // honeypot
+    website: "",
   });
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
@@ -36,7 +36,7 @@ export default function Contact() {
           name: "",
           email: "",
           organization: "",
-          interest: "certification",
+          interest: "partnership",
           country: "",
           message: "",
           website: "",
@@ -57,18 +57,19 @@ export default function Contact() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-40 pb-16 lg:pt-48">
+      <section className="pt-40 pb-16 lg:pt-48 bg-ink text-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 flex items-center gap-3">
-            <span className="inline-block w-8 h-px bg-ink" />
-            Get in touch
+          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+            <span className="inline-block w-8 h-px bg-gold" />
+            Contact SafeHer Foundation
           </p>
           <h1 className="display text-[clamp(3rem,8vw,8rem)] font-light max-w-[1100px]">
-            Let's<br />
-            <span className="display-italic text-burgundy">talk.</span>
+            Let&apos;s<br />
+            <span className="display-italic text-gold">talk.</span>
           </h1>
         </div>
       </section>
+      <div className="gold-rule" />
 
       {/* CONTACT GRID */}
       <section className="pb-32">
@@ -77,9 +78,9 @@ export default function Contact() {
             {/* Left: Info */}
             <div className="lg:col-span-4">
               <p className="body-prose mb-12">
-                Universities, governments, hotels, NGOs, corporations,
+                Universities, governments, NGOs, corporations, donors,
                 journalists, and funders — every conversation begins the same
-                way. Tell us who you are and what you need. We'll respond
+                way. Tell us who you are and what you need. We&apos;ll respond
                 within two business days.
               </p>
 
@@ -98,7 +99,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="eyebrow opacity-60 mb-3 flex items-center gap-2">
-                    <MapPin size={12} /> Washington, USA
+                    <MapPin size={12} /> Washington, D.C., USA
                   </p>
                   <p className="text-sm">
                     By appointment
@@ -129,28 +130,27 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="bg-burgundy text-cream p-12 lg:p-16 text-center"
+                  className="bg-ink text-cream p-12 lg:p-16 text-center"
                 >
-                  <div className="inline-flex w-16 h-16 rounded-full border-2 border-cream items-center justify-center mb-6">
-                    <Check size={28} />
+                  <div className="inline-flex w-16 h-16 rounded-full border-2 border-gold items-center justify-center mb-6">
+                    <Check size={28} className="text-gold" />
                   </div>
                   <h3 className="display text-4xl lg:text-5xl mb-4">
                     Message received.
                   </h3>
                   <p className="body-prose opacity-90 max-w-md mx-auto mb-8">
-                    Thank you for reaching out. We will be in touch within two
-                    business days.
+                    Thank you for reaching out to SafeHer Foundation. We will
+                    be in touch within two business days.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
-                    className="eyebrow link-underline"
+                    className="eyebrow link-underline text-gold"
                   >
                     Send another message
                   </button>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-8">
-                  {/* Honeypot — hidden from real users, bots fill it */}
                   <input
                     type="text"
                     name="website"
@@ -186,7 +186,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label className="eyebrow opacity-60 block mb-2">
-                        Organization
+                        Organisation
                       </label>
                       <input
                         value={form.organization}
@@ -208,7 +208,7 @@ export default function Contact() {
 
                   <div>
                     <label className="eyebrow opacity-60 block mb-2">
-                      I'm interested in *
+                      I&apos;m interested in *
                     </label>
                     <select
                       required
@@ -216,14 +216,20 @@ export default function Contact() {
                       onChange={update("interest")}
                       className="w-full bg-transparent border-b border-ink/30 pb-3 outline-none focus:border-burgundy transition-colors"
                     >
+                      <option value="partnership">
+                        Strategic partnership or funding
+                      </option>
                       <option value="certification">
                         Becoming a Certified Safety Educator
                       </option>
                       <option value="institutional">
-                        Institutional program for our organization
+                        Institutional programme for our organisation
                       </option>
-                      <option value="partnership">
-                        Strategic partnership / funding
+                      <option value="donation">
+                        Donating or sponsoring a cohort
+                      </option>
+                      <option value="volunteer">
+                        Volunteering
                       </option>
                       <option value="speaking">Speaking engagement</option>
                       <option value="media">Media inquiry</option>
@@ -241,7 +247,7 @@ export default function Contact() {
                       value={form.message}
                       onChange={update("message")}
                       className="w-full bg-transparent border-b border-ink/30 pb-3 outline-none focus:border-burgundy transition-colors resize-none"
-                      placeholder="What would you like to build with us?"
+                      placeholder="How would you like to work with SafeHer Foundation?"
                     />
                   </div>
 
@@ -251,8 +257,9 @@ export default function Contact() {
 
                   <div className="pt-4 flex items-center justify-between flex-wrap gap-4">
                     <p className="text-xs opacity-60 max-w-md">
-                      By submitting, you agree to be contacted by SafeHers
-                      regarding your inquiry. We never share your information.
+                      By submitting, you agree to be contacted by SafeHer
+                      Foundation regarding your inquiry. We never share your
+                      information.
                     </p>
                     <button
                       type="submit"

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — SafeHers",
+  title: "Privacy Policy — SafeHer Foundation",
   description:
-    "How SafeHers collects, stores, and protects your personal data, and your rights under Ghana's Data Protection Act 2012 and the GDPR.",
+    "How SafeHer Foundation collects, stores, and protects your personal data, and your rights under Ghana's Data Protection Act 2012 and the GDPR.",
   openGraph: {
-    title: "Privacy Policy — SafeHers",
-    description: "Your data rights and how SafeHers handles personal information.",
+    title: "Privacy Policy — SafeHer Foundation",
+    description: "Your data rights and how SafeHer Foundation handles personal information.",
   },
 };
 

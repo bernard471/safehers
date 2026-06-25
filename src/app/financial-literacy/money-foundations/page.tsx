@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FinancialDisclaimer } from "@/components/FinancialDisclaimer";
 
 export const metadata: Metadata = {
-  title: "Money Foundations — Financial Safety & Wealth — SafeHers",
+  title: "Money Foundations — Financial Safety & Wealth — SafeHer Foundation",
   description: "Budgeting, financial mindset, and breaking financial trauma cycles. Practical money foundations for African women.",
 };
 

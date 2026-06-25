@@ -11,14 +11,16 @@
   --font-body: 'Inter', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  --ink: #0E0E10;
-  --bone: #F5F1EA;
-  --cream: #FAF6EF;
-  --rose: #E8B4B8;
+  --ink: #0C0C0E;
+  --bone: #F0ECE4;
+  --cream: #FAF7F1;
+  --rose: #D4A0A6;
   --burgundy: #5C1F2E;
-  --terracotta: #C97B5C;
-  --moss: #2F3E2C;
-  --gold: #C9A961;
+  --terracotta: #B8654D;
+  --moss: #1E3A2F;
+  --gold: #B8963E;
+  --forest: #1B3528;
+  --red-accent: #8B2D2D;
 }
 
 * {
@@ -173,4 +175,23 @@ html, body {
 }
 .lift:hover {
   transform: translateY(-4px);
+}
+
+/* Gold divider */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Hero image blend — removes light backgrounds on dark sections */
+.hero-blend {
+  mix-blend-mode: lighten;
+  filter: contrast(1.05) brightness(1.1);
+}
+
+/* Premium section border */
+.section-rule {
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.12;
 }

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { Resend } from "@/lib/mail";
 import { connectDB } from "@/lib/mongodb";
 import { Contact } from "@/models/Contact";
 import { checkRateLimit } from "@/lib/rateLimiter";
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     // ── Rate limiting ────────────────────────────────────────────────────────
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-    if (!checkRateLimit(ip)) {
+    if (!(await checkRateLimit(ip))) {
       return NextResponse.json(
         { error: "Too many requests. Please try again later." },
         { status: 429 }
@@ -65,15 +65,15 @@ export async function POST(req: NextRequest) {
     if (resend) {
       const results = await Promise.allSettled([
         resend.emails.send({
-          from: "SafeHers <noreply@safehers.africa>",
+          from: "SafeHer Foundation <noreply@safehers.africa>",
           to: email,
-          subject: "We received your message ✦ SafeHers",
+          subject: "We received your message — SafeHer Foundation",
           html: contactConfirmationEmail(name),
         }),
         resend.emails.send({
-          from: "SafeHers Forms <noreply@safehers.africa>",
+          from: "SafeHer Foundation <noreply@safehers.africa>",
           to: NOTIFICATION_EMAIL,
-          subject: `New contact from ${name} — SafeHers`,
+          subject: `New contact from ${name} — SafeHer Foundation`,
           html: contactNotificationEmail({
             name,
             email,

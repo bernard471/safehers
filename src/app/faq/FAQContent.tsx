@@ -169,27 +169,28 @@ export default function FAQContent() {
 
   return (
     <>
-      <section className="pt-40 pb-24 lg:pt-48">
+      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 flex items-center gap-3">
-            <span className="inline-block w-8 h-px bg-ink" />
+          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+            <span className="inline-block w-8 h-px bg-gold" />
             Frequently Asked Questions
           </p>
           <h1 className="display text-[clamp(3rem,8vw,8rem)] font-light max-w-[900px] mb-6">
             Got{" "}
-            <span className="display-italic text-burgundy">questions?</span>
+            <span className="display-italic text-gold">questions?</span>
           </h1>
-          <p className="body-prose max-w-2xl text-ink/70">
+          <p className="body-prose max-w-2xl opacity-70">
             We have compiled answers to the most common questions we receive
             from individuals, universities, corporations, and funders. If
             yours is not here,{" "}
-            <a href="/contact" className="link-underline">
+            <a href="/contact" className="link-underline text-gold">
               reach out directly
             </a>
             .
           </p>
         </div>
       </section>
+      <div className="gold-rule" />
 
       <section className="pb-32">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">

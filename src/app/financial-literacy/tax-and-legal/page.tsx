@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FinancialDisclaimer } from "@/components/FinancialDisclaimer";
 
 export const metadata: Metadata = {
-  title: "Tax & Legal Basics — Financial Safety & Wealth — SafeHers",
+  title: "Tax & Legal Basics — Financial Safety & Wealth — SafeHer Foundation",
   description: "Ghana GRA taxes, contracts, inheritance law, and property rights. Legal and tax literacy for African women.",
 };
 

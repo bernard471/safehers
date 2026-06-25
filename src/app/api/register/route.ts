@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { Resend } from "@/lib/mail";
 import { connectDB } from "@/lib/mongodb";
 import { Registration } from "@/models/Registration";
 

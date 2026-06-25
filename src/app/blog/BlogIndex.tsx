@@ -33,18 +33,19 @@ export default function BlogIndex({
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-24 lg:pt-48">
+      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 flex items-center gap-3">
-            <span className="inline-block w-8 h-px bg-ink" />
+          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+            <span className="inline-block w-8 h-px bg-gold" />
             The SafeHers Journal
           </p>
           <h1 className="display text-[clamp(3rem,8vw,8rem)] font-light max-w-[900px]">
             Safety knowledge,{" "}
-            <span className="display-italic text-burgundy">shared</span>
+            <span className="display-italic text-gold">shared</span>
           </h1>
         </div>
       </section>
+      <div className="gold-rule" />
 
       {/* Featured post */}
       {featured && (

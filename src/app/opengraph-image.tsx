@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "SafeHers — Safety education for women across Africa";
+export const alt = "SafeHer Foundation — Pretty Girl, Save Yourself. Women's safety education across Africa.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -12,7 +12,7 @@ export default function OgImage() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#0E0E10",
+          background: "#0C0C0E",
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-end",
@@ -20,14 +20,13 @@ export default function OgImage() {
           fontFamily: "Georgia, serif",
         }}
       >
-        {/* Grain texture overlay simulation */}
         <div
           style={{
             position: "absolute",
             inset: 0,
             background:
               "radial-gradient(ellipse at 20% 80%, rgba(92,31,46,0.35) 0%, transparent 60%), " +
-              "radial-gradient(ellipse at 80% 20%, rgba(92,31,46,0.2) 0%, transparent 55%)",
+              "radial-gradient(ellipse at 80% 20%, rgba(184,150,62,0.15) 0%, transparent 55%)",
           }}
         />
 
@@ -38,8 +37,8 @@ export default function OgImage() {
             top: 64,
             right: 80,
             fontSize: 120,
-            color: "#E8B4B8",
-            opacity: 0.25,
+            color: "#B8963E",
+            opacity: 0.2,
             lineHeight: 1,
           }}
         >
@@ -53,14 +52,16 @@ export default function OgImage() {
             top: 60,
             left: 80,
             display: "flex",
-            alignItems: "center",
-            gap: 10,
+            alignItems: "baseline",
+            gap: 12,
           }}
         >
-          <span style={{ color: "#FAF6EF", fontSize: 28, letterSpacing: "-0.02em" }}>
-            SafeHers
+          <span style={{ color: "#FAF7F1", fontSize: 28, letterSpacing: "-0.02em" }}>
+            SafeHer
           </span>
-          <span style={{ color: "#E8B4B8", fontSize: 22 }}>✦</span>
+          <span style={{ color: "#B8963E", fontSize: 13, fontFamily: "monospace", letterSpacing: "0.18em", textTransform: "uppercase" as const }}>
+            Foundation
+          </span>
         </div>
 
         {/* Headline */}
@@ -70,28 +71,27 @@ export default function OgImage() {
               fontFamily: "monospace",
               fontSize: 13,
               letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#FAF6EF",
-              opacity: 0.5,
+              textTransform: "uppercase" as const,
+              color: "#B8963E",
+              opacity: 0.8,
               marginBottom: 20,
             }}
           >
-            Safety education for women
+            Ghana-US Women&apos;s Safety Foundation
           </div>
           <div
             style={{
-              fontSize: 72,
+              fontSize: 68,
               fontWeight: 300,
-              color: "#FAF6EF",
+              color: "#FAF7F1",
               lineHeight: 1.05,
               letterSpacing: "-0.02em",
               maxWidth: 900,
             }}
           >
-            Knowledge is the
-            <span style={{ color: "#E8B4B8", fontStyle: "italic" }}> first</span>
+            Pretty Girl,
             <br />
-            line of defence.
+            <span style={{ color: "#B8963E", fontStyle: "italic" }}>Save Yourself.</span>
           </div>
           <div
             style={{
@@ -99,8 +99,8 @@ export default function OgImage() {
               fontFamily: "monospace",
               fontSize: 14,
               letterSpacing: "0.1em",
-              color: "#FAF6EF",
-              opacity: 0.45,
+              color: "#FAF7F1",
+              opacity: 0.4,
             }}
           >
             safehers.africa

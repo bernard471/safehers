@@ -16,7 +16,7 @@ export default function AdminLoginPage() {
     setLoading(true);
     setError("");
 
-    const res = await signIn("credentials", {
+    const res = await signIn("admin-login", {
       redirect: false,
       email,
       password,
@@ -35,8 +35,8 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md">
         {/* Brand */}
         <div className="text-cream mb-12 text-center">
-          <h1 className="display text-5xl font-light mb-2">SafeHers</h1>
-          <span className="text-rose text-2xl">✦</span>
+          <h1 className="display text-4xl font-light mb-1">SafeHer</h1>
+          <span className="text-gold text-xs font-mono tracking-widest uppercase">Foundation</span>
           <p className="eyebrow text-cream/40 mt-4">Admin Panel</p>
         </div>
 

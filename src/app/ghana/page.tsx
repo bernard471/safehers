@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "SafeHers Ghana — Safety Education in Accra & Beyond",
+  title: "Ghana — SafeHer Foundation",
   description:
-    "SafeHers was founded in Accra, Ghana. We partner with Ghanaian universities, corporations, and government to deliver safety education rooted in the local context.",
+    "SafeHer Foundation was founded in Accra, Ghana. We partner with Ghanaian universities, corporations, and government to deliver safety education rooted in the local context.",
   openGraph: {
-    title: "SafeHers Ghana",
+    title: "SafeHer Foundation — Ghana",
     description:
-      "Safety education for women across Ghana — in the classroom, the workplace, and online.",
+      "Women's safety education rooted in Ghana — in the classroom, the workplace, and online.",
   },
 };
 
-const partners = [
+const targetPartners = [
   "University of Ghana, Legon",
   "Ashesi University",
   "Ghana Institute of Management & Public Administration",
@@ -48,26 +48,26 @@ export default function GhanaPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream grain">
+      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 opacity-60 flex items-center gap-3">
-            <span className="inline-block w-8 h-px bg-cream opacity-40" />
-            Ghana ✦ West Africa
+          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+            <span className="inline-block w-8 h-px bg-gold" />
+            Ghana &middot; West Africa
           </p>
           <h1 className="display text-[clamp(3rem,8vw,7rem)] font-light max-w-[1000px] leading-[1.02]">
             Safety education,
             <br />
-            <span className="display-italic text-rose">rooted in Ghana.</span>
+            <span className="display-italic text-gold">rooted in Ghana.</span>
           </h1>
           <p className="body-prose mt-8 max-w-2xl opacity-70 text-lg">
-            SafeHers was born in Accra. Our curriculum is designed around the
-            realities facing Ghanaian women — from Accra's digital economy to
-            university campuses across the country.
+            SafeHer Foundation was born in Accra. Our curriculum is designed
+            around the realities facing Ghanaian women — from Accra&apos;s
+            digital economy to university campuses across the country.
           </p>
           <div className="mt-12 flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="bg-cream text-ink px-8 py-4 eyebrow hover:bg-bone transition-colors"
+              className="bg-gold text-ink px-8 py-4 eyebrow hover:bg-cream transition-colors"
             >
               Partner with us in Ghana
             </Link>
@@ -81,13 +81,15 @@ export default function GhanaPage() {
         </div>
       </section>
 
+      <div className="gold-rule" />
+
       {/* LOCAL CONTEXT */}
       <section className="py-24 bg-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="eyebrow mb-6 flex items-center gap-3">
-                <span className="inline-block w-8 h-px bg-ink" />
+              <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+                <span className="inline-block w-8 h-px bg-gold" />
                 Why Ghana
               </p>
               <h2 className="display text-[clamp(2rem,5vw,4rem)] font-light mb-8">
@@ -101,9 +103,9 @@ export default function GhanaPage() {
                   Western contexts and miss the nuances that matter.
                 </p>
                 <p>
-                  SafeHers was built from the ground up in Ghana — by Ghanaian
-                  women, for Ghanaian women. We reference local laws (the
-                  Domestic Violence Act, the Data Protection Act), local
+                  SafeHer Foundation was built from the ground up in Ghana — by
+                  Ghanaian women, for Ghanaian women. We reference local laws
+                  (the Domestic Violence Act, the Data Protection Act), local
                   platforms (MTN Mobile Money, Vodafone Cash), and local
                   institutions (DOVVSU, NCCE, GhanaPolice) so that our
                   content is immediately actionable.
@@ -116,11 +118,12 @@ export default function GhanaPage() {
               </div>
             </div>
             <div className="space-y-4">
+              <p className="eyebrow text-gold mb-4">Phase One Targets (2025–2027)</p>
               {[
-                { label: "Partner universities", value: "12+" },
-                { label: "Workshop participants (2023–24)", value: "3,400+" },
-                { label: "Certified educators based in Ghana", value: "47" },
-                { label: "Districts reached", value: "8" },
+                { label: "Target partner universities", value: "12+" },
+                { label: "Planned workshop participants", value: "3,000+" },
+                { label: "Targeted certified educators in Ghana", value: "50+" },
+                { label: "Target districts", value: "8" },
               ].map(({ label, value }) => (
                 <div
                   key={label}
@@ -130,20 +133,25 @@ export default function GhanaPage() {
                   <span className="display text-3xl font-light">{value}</span>
                 </div>
               ))}
+              <p className="text-xs opacity-40 mt-2">
+                These are planned rollout metrics for our Ghana Phase One
+                programme. Verified outcomes will be published in our annual
+                reports.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PARTNERS */}
+      {/* TARGET PARTNERS */}
       <section className="py-24 bg-bone">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-12 flex items-center gap-3">
-            <span className="inline-block w-8 h-px bg-ink" />
-            Ghanaian Partners
+          <p className="eyebrow mb-12 flex items-center gap-3 text-gold">
+            <span className="inline-block w-8 h-px bg-gold" />
+            Target Institutional Partners
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {partners.map((p) => (
+            {targetPartners.map((p) => (
               <div
                 key={p}
                 className="border border-ink/15 px-5 py-4 body-prose text-sm text-ink/70 hover:border-ink/40 transition-colors"
@@ -152,19 +160,27 @@ export default function GhanaPage() {
               </div>
             ))}
           </div>
+          <p className="text-xs opacity-40 mt-4">
+            Institutional partnerships are in development. Confirmed partners
+            will be listed on our{" "}
+            <Link href="/partners" className="link-underline">
+              partners page
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
       <section className="py-24 bg-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-12 flex items-center gap-3">
-            <span className="inline-block w-8 h-px bg-ink" />
-            From Ghanaians We've Worked With
+          <p className="eyebrow mb-12 flex items-center gap-3 text-gold">
+            <span className="inline-block w-8 h-px bg-gold" />
+            Early Voices from Ghana
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
-              <blockquote key={t.name} className="border-t-2 border-burgundy pt-6">
+              <blockquote key={t.name} className="border-t-2 border-gold pt-6">
                 <p className="body-prose text-ink/80 mb-6 italic">
                   &ldquo;{t.quote}&rdquo;
                 </p>
@@ -179,27 +195,27 @@ export default function GhanaPage() {
       </section>
 
       {/* CONTACT CTA */}
-      <section className="py-24 bg-burgundy text-cream">
+      <section className="py-24 bg-ink text-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
-          <p className="eyebrow opacity-60 mb-4">Based in East Legon, Accra</p>
+          <p className="eyebrow text-gold mb-4">Based in East Legon, Accra</p>
           <h2 className="display text-[clamp(2rem,6vw,5rem)] font-light mb-6">
-            Let's work together.
+            Let&apos;s work together.
           </h2>
           <p className="body-prose opacity-75 max-w-xl mx-auto mb-10">
             Whether you are a university, a corporation, or a government
-            agency — if you are in Ghana and you care about women's safety,
+            agency — if you are in Ghana and you care about women&apos;s safety,
             we want to hear from you.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-cream text-ink px-8 py-4 eyebrow hover:bg-bone transition-colors"
+              className="bg-gold text-ink px-8 py-4 eyebrow hover:bg-cream transition-colors"
             >
               Get in touch
             </Link>
             <a
               href="mailto:ghana@safehers.africa"
-              className="border border-cream/40 text-cream px-8 py-4 eyebrow hover:border-cream/80 transition-colors"
+              className="border border-cream/30 text-cream px-8 py-4 eyebrow hover:border-cream/70 transition-colors"
             >
               ghana@safehers.africa
             </a>

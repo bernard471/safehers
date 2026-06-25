@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Financial Safety & Wealth — SafeHers",
+  title: "Financial Safety & Wealth — SafeHer Foundation",
   description:
-    "Financial independence is a safety strategy. SafeHers equips African women with money management, banking, investing, and entrepreneurship knowledge rooted in local context.",
+    "Financial independence is a safety strategy. SafeHer Foundation equips African women with money management, banking, investing, and entrepreneurship knowledge rooted in local context.",
 };
 
 const DISCLAIMER =

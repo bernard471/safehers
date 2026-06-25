@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FinancialDisclaimer } from "@/components/FinancialDisclaimer";
 
 export const metadata: Metadata = {
-  title: "Wealth Building — Financial Safety & Wealth — SafeHers",
+  title: "Wealth Building — Financial Safety & Wealth — SafeHer Foundation",
   description: "Generational wealth, land and property, SSNIT pension, and the wealth gap in Africa. For African women.",
 };
 

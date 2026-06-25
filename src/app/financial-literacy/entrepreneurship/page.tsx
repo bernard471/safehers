@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FinancialDisclaimer } from "@/components/FinancialDisclaimer";
 
 export const metadata: Metadata = {
-  title: "Entrepreneurship — Financial Safety & Wealth — SafeHers",
+  title: "Entrepreneurship — Financial Safety & Wealth — SafeHer Foundation",
   description: "Business registration, mobile money for business, pricing, and Susu cooperatives for African women entrepreneurs.",
 };
 

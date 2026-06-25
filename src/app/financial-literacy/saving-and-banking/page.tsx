@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FinancialDisclaimer } from "@/components/FinancialDisclaimer";
 
 export const metadata: Metadata = {
-  title: "Saving & Banking — Financial Safety & Wealth — SafeHers",
+  title: "Saving & Banking — Financial Safety & Wealth — SafeHer Foundation",
   description: "Choosing banks, mobile money safety, susu groups, and building an emergency fund. Practical banking guidance for African women.",
 };
 

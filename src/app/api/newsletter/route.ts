@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import { Resend } from "@/lib/mail";
 import { connectDB } from "@/lib/mongodb";
 import { Newsletter } from "@/models/Newsletter";
 import { checkRateLimit } from "@/lib/rateLimiter";
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     // ── Rate limiting ─────────────────────────────────────────────────────────
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-    if (!checkRateLimit(ip)) {
+    if (!(await checkRateLimit(ip))) {
       return NextResponse.json(
         { error: "Too many requests. Please try again later." },
         { status: 429 }
@@ -62,9 +62,9 @@ export async function POST(req: NextRequest) {
     if (resend && isNew) {
       resend.emails
         .send({
-          from: "SafeHers <hello@safehers.africa>",
+          from: "SafeHer Foundation <hello@safehers.africa>",
           to: email,
-          subject: "Welcome to SafeHers ✦",
+          subject: "Welcome to SafeHer Foundation",
           html: newsletterWelcomeEmail(email),
         })
         .catch((e: unknown) => console.error("[newsletter] Email failed:", e));

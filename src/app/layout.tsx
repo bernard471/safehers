@@ -4,29 +4,34 @@ import RootLayoutInner from "@/components/RootLayoutInner";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://safehers.africa"),
-  title: "SafeHers — Pan-African Safety Education",
+  title: "SafeHer Foundation — Women's Safety Education Across Africa",
   description:
-    "A pan-African safety education movement equipping women and girls with practical knowledge to protect themselves — physically, digitally, and emotionally.",
+    "SafeHer Foundation is a Ghana-US women's safety foundation equipping girls and women across Africa with practical physical, digital, and financial safety education. Pretty Girl, Save Yourself.",
   keywords: [
-    "women safety",
-    "Africa",
-    "Ghana",
-    "cybersecurity",
-    "personal safety",
-    "online safety",
-    "education",
+    "SafeHer Foundation",
+    "SafeHers movement",
+    "Pretty Girl Save Yourself",
+    "women safety education Africa",
+    "girls safety training Ghana",
+    "digital safety for women",
+    "online safety Ghana",
+    "women empowerment Africa",
+    "financial literacy women Africa",
+    "personal safety training",
+    "cybersecurity women Ghana",
+    "pan-African women foundation",
   ],
   openGraph: {
-    title: "SafeHers — Pan-African Safety Education",
+    title: "SafeHer Foundation — Pretty Girl, Save Yourself.",
     description:
-      "A pan-African safety education movement equipping women and girls with practical knowledge to protect themselves.",
-    siteName: "SafeHers",
+      "A Ghana-US women's safety foundation equipping girls and women across Africa with practical physical, digital, and financial safety education.",
+    siteName: "SafeHer Foundation",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SafeHers — Pan-African Safety Education",
+    title: "SafeHer Foundation — Pretty Girl, Save Yourself.",
     description:
-      "Safety education for women and girls across Africa.",
+      "A Ghana-US women's safety foundation equipping girls and women across Africa with practical physical, digital, and financial safety education.",
   },
 };
 

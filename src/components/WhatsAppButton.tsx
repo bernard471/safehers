@@ -6,7 +6,7 @@ import { MessageCircle, X } from "lucide-react";
 
 const WHATSAPP_NUMBER = "233XXXXXXXXX"; // replace with real number
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hi SafeHers! I'd like to learn more about your programmes."
+  "Hello, SafeHer Foundation! I'd like to learn more about your programmes."
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — SafeHers",
+  title: "Terms of Service — SafeHer Foundation",
   description:
-    "Terms governing use of the SafeHers website, intellectual property, liability disclaimers, and governing law.",
+    "Terms governing use of the SafeHer Foundation website, intellectual property, liability disclaimers, and governing law.",
   openGraph: {
-    title: "Terms of Service — SafeHers",
-    description: "Terms governing use of the SafeHers platform.",
+    title: "Terms of Service — SafeHer Foundation",
+    description: "Terms governing use of the SafeHer Foundation website.",
   },
 };
 
