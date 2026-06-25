@@ -225,13 +225,13 @@ export default function HomeClient({ recentPosts, caseStudies }: HomeClientProps
                   className="group-hover:rotate-45 transition-transform duration-300"
                 />
               </Link>
-              <Link
+              {/* <Link
                 href="/donate"
                 className="group inline-flex items-center justify-center sm:justify-start gap-3 border border-gold/50 text-gold px-7 py-4 hover:bg-gold/10 transition-colors"
               >
                 <span className="eyebrow">SPONSOR A COHORT</span>
                 <ArrowUpRight size={16} />
-              </Link>
+              </Link> */}
               <Link
                 href="/services"
                 className="group inline-flex items-center justify-center sm:justify-start gap-3 border border-cream/20 text-cream/80 px-7 py-4 hover:bg-cream/5 transition-colors"
