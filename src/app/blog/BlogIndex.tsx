@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Clock } from "lucide-react";
 import type { PostMeta } from "@/lib/blog";
+import Image from "next/image";
 
 function formatDate(d: string) {
   return new Date(d).toLocaleDateString("en-GB", {
@@ -33,16 +34,32 @@ export default function BlogIndex({
   return (
     <>
       {/* Hero */}
-      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
-            <span className="inline-block w-8 h-px bg-gold" />
-            The SafeHers Journal
-          </p>
-          <h1 className="display text-[clamp(3rem,8vw,8rem)] font-light max-w-[900px]">
-            Safety knowledge,{" "}
-            <span className="display-italic text-gold">shared</span>
-          </h1>
+      <section className="relative pt-40 pb-24 lg:pt-48 bg-ink text-cream overflow-hidden">
+        <div className="grid lg:grid-cols-12 gap-6 items-center max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="lg:col-span-7">
+            <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+              <span className="inline-block w-8 h-px bg-gold" />
+              The SafeHers Journal
+            </p>
+            <h1 className="display text-[clamp(3rem,8vw,8rem)] font-light max-w-[900px]">
+              Safety knowledge,{" "}
+              <span className="display-italic text-gold">shared</span>
+            </h1>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="hidden lg:flex justify-center lg:col-span-5"
+          >
+            <Image
+              src="/images/safeherlogo.png"
+              alt="SafeHer Academy"
+              width={280}
+              height={280}
+              className="w-64 h-64 object-contain opacity-80 drop-shadow-[0_0_60px_rgba(184,150,62,0.2)]"
+            />
+          </motion.div>
         </div>
       </section>
       <div className="gold-rule" />

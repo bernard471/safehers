@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { getAllCaseStudyMetas } from "@/lib/caseStudies";
+import AnimatedHeroLogo from "@/components/AnimatedHeroLogo";
 
 export const metadata: Metadata = {
   title: "Case Studies — SafeHer Foundation",
@@ -14,16 +15,19 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
-            <span className="inline-block w-8 h-px bg-gold" />
-            Impact Stories
-          </p>
-          <h1 className="display text-[clamp(3rem,8vw,8rem)] font-light max-w-[900px]">
-            Proof in{" "}
-            <span className="display-italic text-gold">practice</span>
-          </h1>
+      <section className="relative pt-40 pb-24 lg:pt-48 bg-ink text-cream overflow-hidden">
+        <div className="grid lg:grid-cols-12 gap-6 items-center max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="lg:col-span-7">
+            <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+              <span className="inline-block w-8 h-px bg-gold" />
+              Impact Stories
+            </p>
+            <h1 className="display text-[clamp(3rem,8vw,8rem)] font-light max-w-[900px]">
+              Proof in{" "}
+              <span className="display-italic text-gold">practice</span>
+            </h1>
+          </div>
+          <AnimatedHeroLogo />
         </div>
       </section>
       <div className="gold-rule" />

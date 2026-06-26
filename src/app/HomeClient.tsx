@@ -339,7 +339,7 @@ export default function HomeClient({ recentPosts, caseStudies }: HomeClientProps
             ].map((s, i) => (
               <div
                 key={i}
-                className={`py-8 lg:py-10 pr-4 ${
+                className={` p-8 sm:p-10 lg:p-12 ${
                   i % 2 === 0 ? "border-r border-ink/15" : ""
                 } ${
                   i < 2 ? "border-b lg:border-b-0" : ""

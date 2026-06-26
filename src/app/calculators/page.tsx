@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useCurrency } from "@/components/CurrencyToggle";
 import { CurrencyToggle, useCurrency as _useCurrency } from "@/components/CurrencyToggle";
 import { formatCurrency } from "@/lib/currencies";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 // ─── Savings Goal Calculator ────────────────────────────────────────────────
 function SavingsGoalCalc() {
@@ -197,19 +199,38 @@ function CurrencyBar() {
 export default function CalculatorsPage() {
   return (
     <>
-      <section className="pt-40 pb-20 lg:pt-48 bg-ink text-cream">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-4 opacity-60">Financial Safety & Wealth</p>
-          <h1 className="display text-[clamp(2.5rem,7vw,7rem)] font-light">
-            Financial<br />
-            <span className="display-italic" style={{ color: "var(--rose)" }}>Calculators</span>
-          </h1>
-          <p className="body-prose mt-6 max-w-2xl opacity-70">
-            Five practical tools for planning your savings, investments, debts, and business finances. All calculations are illustrative only and do not constitute financial advice.
-          </p>
-          <div className="mt-8">
-            <CurrencyBar />
+      <section className="relative pt-40 pb-24 lg:pt-48 bg-ink text-cream overflow-hidden">
+        <div className="grid lg:grid-cols-12 gap-6 items-center max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="lg:col-span-7">
+            <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+              <span className="inline-block w-8 h-px bg-gold" />
+              Financial Safety & Wealth
+            </p>
+            <h1 className="display text-[clamp(2.5rem,7vw,7rem)] font-light">
+              Financial<br />
+              <span className="display-italic text-gold">Calculators</span>
+            </h1>
+            <p className="body-prose mt-6 max-w-2xl opacity-70">
+              Five practical tools for planning your savings, investments, debts, and business finances. All calculations are illustrative only and do not constitute financial advice.
+            </p>
+            <div className="mt-8">
+              <CurrencyBar />
+            </div>
           </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="hidden lg:flex justify-center lg:col-span-5"
+          >
+            <Image
+              src="/images/safeherlogo.png"
+              alt="SafeHer Academy"
+              width={280}
+              height={280}
+              className="w-64 h-64 object-contain opacity-80 drop-shadow-[0_0_60px_rgba(184,150,62,0.2)]"
+            />
+          </motion.div>
         </div>
       </section>
       <section className="py-20">

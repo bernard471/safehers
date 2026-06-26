@@ -13,6 +13,7 @@ import {
 } from "@/lib/chapters-data";
 import AfricaMap from "@/components/AfricaMap";
 import ChapterLeaderboard from "@/components/ChapterLeaderboard";
+import Image from "next/image";
 
 const statusStyles: Record<string, { bg: string; text: string; label: string }> = {
   active: { bg: "bg-gold/15", text: "text-gold", label: "Active" },
@@ -35,8 +36,9 @@ export default function ChaptersPage() {
   return (
     <>
       {/* HERO */}
-      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+      <section className="relative pt-40 pb-24 lg:pt-48 bg-ink text-cream overflow-hidden">
+        <div className="grid lg:grid-cols-12 gap-6 items-center max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="lg:col-span-7">
           <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
             <span className="inline-block w-8 h-px bg-gold" />
             Pan-African Chapters
@@ -50,6 +52,14 @@ export default function ChaptersPage() {
             community-led in towns — every chapter delivers practical safety education
             adapted to its local context. We are building across the entire continent.
           </p>
+         </div> 
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.3 }}
+            className="hidden lg:flex justify-center lg:col-span-5"
+          >
+            <Image src="/images/safeherlogo.png" alt="SafeHer Academy" width={280} height={280} className="w-64 h-64 object-contain opacity-80 drop-shadow-[0_0_60px_rgba(184,150,62,0.2)]" />
+        </motion.div>   
+         </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {[
               { value: TOTAL_COUNTRIES, label: "Countries" },
@@ -63,7 +73,8 @@ export default function ChaptersPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+          
+       
       </section>
       <div className="gold-rule" />
 

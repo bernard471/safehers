@@ -1,30 +1,43 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Safeguarding Policy — SafeHer Foundation",
-  description:
-    "SafeHer Foundation's safeguarding policy protects every participant in our programmes, especially minors and vulnerable adults.",
-};
+import Link from "next/link";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function SafeguardingPage() {
   return (
     <>
-      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
-            <span className="inline-block w-8 h-px bg-gold" />
-            Safeguarding
-          </p>
-          <h1 className="display text-[clamp(3rem,8vw,7rem)] font-light max-w-[1000px] mb-8">
-            Protecting<br />
-            <span className="display-italic text-gold">every participant.</span>
-          </h1>
-          <p className="body-prose max-w-2xl opacity-70">
-            SafeHer Foundation is committed to the safety and wellbeing of
-            every person involved in our programmes. Our safeguarding framework
-            ensures that the highest standards of protection are upheld.
-          </p>
+      <section className="relative pt-40 pb-24 lg:pt-48 bg-ink text-cream overflow-hidden">
+        <div className="grid lg:grid-cols-12 gap-6 items-center max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="lg:col-span-7">
+            <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+              <span className="inline-block w-8 h-px bg-gold" />
+              Safeguarding
+            </p>
+            <h1 className="display text-[clamp(3rem,8vw,7rem)] font-light max-w-[1000px] mb-8">
+              Protecting<br />
+              <span className="display-italic text-gold">every participant.</span>
+            </h1>
+            <p className="body-prose max-w-2xl opacity-70">
+              SafeHer Foundation is committed to the safety and wellbeing of
+              every person involved in our programmes. Our safeguarding framework
+              ensures that the highest standards of protection are upheld.
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="hidden lg:flex justify-center lg:col-span-5"
+          >
+            <Image
+              src="/images/safeherlogo.png"
+              alt="SafeHer Academy"
+              width={280}
+              height={280}
+              className="w-64 h-64 object-contain opacity-80 drop-shadow-[0_0_60px_rgba(184,150,62,0.2)]"
+            />
+          </motion.div>
         </div>
       </section>
       <div className="gold-rule" />

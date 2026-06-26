@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Volunteer — SafeHer Foundation",
-  description:
-    "Volunteer with SafeHer Foundation. Join our movement as a campus ambassador, programme volunteer, content contributor, or community organiser.",
-};
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const roles = [
   {
@@ -38,21 +35,37 @@ const roles = [
 export default function VolunteerPage() {
   return (
     <>
-      <section className="pt-40 pb-24 lg:pt-48 bg-ink text-cream">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-          <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
-            <span className="inline-block w-8 h-px bg-gold" />
-            Volunteer
-          </p>
-          <h1 className="display text-[clamp(3rem,8vw,7rem)] font-light max-w-[1000px] mb-8">
-            Join the<br />
-            <span className="display-italic text-gold">movement.</span>
-          </h1>
-          <p className="body-prose max-w-2xl opacity-70">
-            SafeHers is powered by women who believe safety education should
-            reach every girl and woman in Africa. Volunteer your time, skills,
-            or platform to help us grow.
-          </p>
+      <section className="relative pt-40 pb-24 lg:pt-48 bg-ink text-cream overflow-hidden">
+        <div className="grid lg:grid-cols-12 gap-6 items-center max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="lg:col-span-7">
+            <p className="eyebrow mb-6 flex items-center gap-3 text-gold">
+              <span className="inline-block w-8 h-px bg-gold" />
+              Volunteer
+            </p>
+            <h1 className="display text-[clamp(3rem,8vw,7rem)] font-light max-w-[1000px] mb-8">
+              Join the<br />
+              <span className="display-italic text-gold">movement.</span>
+            </h1>
+            <p className="body-prose max-w-2xl opacity-70">
+              SafeHers is powered by women who believe safety education should
+              reach every girl and woman in Africa. Volunteer your time, skills,
+              or platform to help us grow.
+            </p>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="hidden lg:flex justify-center lg:col-span-5"
+          >
+            <Image
+              src="/images/safeherlogo.png"
+              alt="SafeHer Academy"
+              width={280}
+              height={280}
+              className="w-64 h-64 object-contain opacity-80 drop-shadow-[0_0_60px_rgba(184,150,62,0.2)]"
+            />
+          </motion.div>
         </div>
       </section>
       <div className="gold-rule" />
