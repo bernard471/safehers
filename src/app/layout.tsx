@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import RootLayoutInner from "@/components/RootLayoutInner";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://safehers.africa"),
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="grain">
         <RootLayoutInner>{children}</RootLayoutInner>
+        <Analytics />
       </body>
     </html>
   );

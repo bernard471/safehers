@@ -356,7 +356,7 @@ export default function HomeClient({ recentPosts, caseStudies }: HomeClientProps
       </section>
 
       {/* FOUNDER AUTHORITY */}
-      <section className="py-24 bg-ink text-cream">
+      {/* <section className="py-24 bg-ink text-cream">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <p className="eyebrow text-gold mb-6">Leadership</p>
@@ -431,7 +431,7 @@ export default function HomeClient({ recentPosts, caseStudies }: HomeClientProps
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* PROGRAMS GRID */}
       <section className="py-24 bg-bone">

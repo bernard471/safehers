@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Analytics } from "@vercel/analytics/react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { WhatsAppButton } from "./WhatsAppButton";
@@ -35,7 +34,6 @@ export default function RootLayoutInner({
       <WhatsAppButton />
       <CookieBanner />
       <NewsletterModal />
-      <Analytics />
     </>
   );
 }
